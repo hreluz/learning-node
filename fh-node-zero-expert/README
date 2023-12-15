@@ -1,3 +1,13 @@
 Instalaciones recomendadas 
 
 https://gist.github.com/Klerith/ab9f091aea5dca80d37c7c9f731c0193
+
+
+
+https://www.builder.io/blog/visual-guide-to-nodejs-event-loop
+https://nodejs.org/en/guides/event-loop-timers-and-nexttick
+
+
+Empezar projecto
+    npm init
+    0.0.1
