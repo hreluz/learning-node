@@ -21,3 +21,9 @@ Ejecutar el comando de package.json
 
 Instalar nodemon
     npm install --save-dev nodemon 
+
+
+Packages
+    https://www.npmjs.com/package/uuid
+
+    https://www.npmjs.com/package/get-age
