@@ -11,3 +11,13 @@ https://nodejs.org/en/guides/event-loop-timers-and-nexttick
 Empezar projecto
     npm init
     0.0.1
+
+
+Ejecutar el comando de package.json
+    npm start
+
+    npm run dev
+
+
+Instalar nodemon
+    npm install --save-dev nodemon 
