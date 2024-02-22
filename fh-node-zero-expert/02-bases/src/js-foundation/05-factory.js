@@ -1,10 +1,9 @@
-const {v4: uuidv4} = require('uuid')
-const getAge = require('get-age')
+const {getAge, getUUID} = require('../plugins')
 
 const buildPerson = ({name, birthdate}) => {
 
     return {
-        id: uuidv4(),
+        id: getUUID(),
         name,
         birthdate,
         // age: new Date().getFullYear() - new Date(birthdate).getFullYear()
