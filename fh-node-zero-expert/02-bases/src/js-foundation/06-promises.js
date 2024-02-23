@@ -7,17 +7,14 @@
 //     .then((pokemon) => pokemon.name)
 // }
 
+const {http} = require('../plugins')
+
 const getPokemonById = async(id) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`
 
-    const resp = await fetch(url);
-
-    const pokemon = await resp.json()
-
-    throw new Error('Pokemon does not exist!')
+    const pokemon = await http.get(url);
 
     return pokemon.name
-
 }
 
 module.exports = getPokemonById
