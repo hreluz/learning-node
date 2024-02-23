@@ -27,8 +27,14 @@
 
 // console.log(john)
 
-const getPokemonById = require('./js-foundation/06-promises')
-getPokemonById(4)
-    .then(pokemon => console.log(pokemon))
-    .catch(err => console.log('Please try again with another pokemon'))
-    .finally(() => console.log('Finally'))
+// const getPokemonById = require('./js-foundation/06-promises')
+// getPokemonById(4)
+//     .then(pokemon => console.log(pokemon))
+//     .catch(err => console.log('Please try again with another pokemon'))
+//     .finally(() => console.log('Finally'))
+
+const {buildLogger} = require('./plugins')
+
+const logger = buildLogger('app.js')
+
+logger.log('Hola mundo')
