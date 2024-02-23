@@ -1,8 +1,8 @@
 // const templateExports = require('./js-foundation/01-template')
 
-const { getUserById } = require('./js-foundation/03-callbacks')
+// const { getUserById } = require('./js-foundation/03-callbacks')
 
-const {getAge, getUUID} = require('./plugins')
+// const {getAge, getUUID} = require('./plugins')
 
 // require('./js-foundation/02-destructuring')
 // require('./js-foundation/03-callbacks')
@@ -17,13 +17,17 @@ const {getAge, getUUID} = require('./plugins')
 //     console.log(user)
 // })
 
-const {buildMakePerson} = require('./js-foundation/05-factory')
+// const {buildMakePerson} = require('./js-foundation/05-factory')
 
-const makePerson = buildMakePerson({getUUID, getAge})
+// const makePerson = buildMakePerson({getUUID, getAge})
 
-const obj = {name: 'John', birthdate: '1992-10-10'}
+// const obj = {name: 'John', birthdate: '1992-10-10'}
 
-const john = makePerson(obj)
+// const john = makePerson(obj)
 
-console.log(john)
+// console.log(john)
 
+const getPokemonById = require('./js-foundation/06-promises')
+const name = getPokemonById(110, (pokemon) => {
+    console.log({pokemon})
+})
