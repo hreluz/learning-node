@@ -1,5 +1,8 @@
 // const templateExports = require('./js-foundation/01-template')
 
+import { getPokemonById } from "./js-foundation/06-promises"
+import { buildLogger } from "./plugins/logger.plugin"
+
 // const { getUserById } = require('./js-foundation/03-callbacks')
 
 // const {getAge, getUUID} = require('./plugins')
@@ -28,14 +31,19 @@
 // console.log(john)
 
 // const getPokemonById = require('./js-foundation/06-promises')
-// getPokemonById(4)
+getPokemonById(5).then(r => console.log(r))
 //     .then(pokemon => console.log(pokemon))
 //     .catch(err => console.log('Please try again with another pokemon'))
 //     .finally(() => console.log('Finally'))
 
-const {buildLogger} = require('./plugins')
+// const {buildLogger} = require('./plugins')
 
 const logger = buildLogger('app.js')
 
+// const logger = buildLogger('app.js')
+
 logger.log('Hola mundo')
 logger.error('esto es algo malo')
+
+
+console.log('hello there')
