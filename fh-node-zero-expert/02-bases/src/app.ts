@@ -31,19 +31,19 @@ import { buildLogger } from "./plugins/logger.plugin"
 // console.log(john)
 
 // const getPokemonById = require('./js-foundation/06-promises')
-getPokemonById(5).then(r => console.log(r))
+// getPokemonById(5).then(r => console.log(r))
 //     .then(pokemon => console.log(pokemon))
 //     .catch(err => console.log('Please try again with another pokemon'))
 //     .finally(() => console.log('Finally'))
 
 // const {buildLogger} = require('./plugins')
 
-const logger = buildLogger('app.js')
+// const logger = buildLogger('app.js')
 
 // const logger = buildLogger('app.js')
 
-logger.log('Hola mundo')
-logger.error('esto es algo malo')
+// logger.log('Hola mundo')
+// logger.error('esto es algo malo')
 
 
-console.log('hello there')
+// console.log('hello there')

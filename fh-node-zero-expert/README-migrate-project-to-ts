@@ -1,0 +1,15 @@
+npm i -D typescript @types/node
+
+npx tsc --init --outDir dist/ --rootDir src
+
+Crear archivo de configuración de Nodemon  en raiz- **nodemon.json**
+```
+{
+  "watch": ["src"],
+  "ext": ".ts,.js",
+  "ignore": [],
+  "exec": "npx ts-node ./src/app.ts"
+}
+```
+
+npm install -D rimraf
