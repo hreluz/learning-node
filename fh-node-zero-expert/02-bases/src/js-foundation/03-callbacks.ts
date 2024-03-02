@@ -1,3 +1,5 @@
+import { setTimeout } from "timers/promises";
+
 interface User {
     id: number,
     name: string
@@ -18,7 +20,10 @@ export function getUserById(id:number, callback:(err?:string, user?:User) => voi
     const user =  users.find(u => u.id === id)
 
     if (!user) {
-        return callback(`User not found with id ${id}`);
+        global.setTimeout(() => {
+            callback(`User not found with id ${id}`)
+        }, 1500);
+        return 
     }
 
     return callback(undefined, user)

@@ -45,3 +45,10 @@ Crear proyecto en TS
 
 
     npm i -D typescript @types/node
+
+
+Para hacer debugging
+
+    cmd + shift +p 
+    debug npm script
+    test
