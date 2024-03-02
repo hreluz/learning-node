@@ -10,4 +10,15 @@ describe('03-callbacks', () => {
             done()
         })
     })
+
+    test('getUserById should return Jane Doe', () => {
+        const id = 2;
+
+        getUserById(id, (err, user) => {
+            expect(err).toBeUndefined()
+            expect(user).toEqual({id:2, name:'Jane Doe'})
+            expect(user!.id).toBe(2)
+            expect(user!.name).toBe('Jane Doe')
+        })
+    })
 })
