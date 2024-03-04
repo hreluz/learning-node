@@ -6,7 +6,13 @@ export const httpClientPlugin = {
         return data
     },
 
-    post: async(url:string, body:any) => {},
-    put: async(url:string, body:any) => {},
-    delete: async(url:string, body:any) => {},
+    post: async(url:string, body:any) => {
+        throw new Error('method not implemented')
+    },
+    put: async(url:string, body:any) => {
+        throw new Error('method not implemented')
+    },
+    delete: async(url:string, body:any) => {
+        throw new Error('method not implemented')
+    },
 };
