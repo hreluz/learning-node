@@ -1,3 +1,7 @@
+Iniciar proyecto
+npm init
+
+
 npm i -D typescript @types/node
 
 npx tsc --init --outDir dist/ --rootDir src
@@ -12,4 +16,22 @@ Crear archivo de configuración de Nodemon  en raiz- **nodemon.json**
 }
 ```
 
+Agregar al inicio del package.json
+{
+  "exclude": ["node_modules"],
+  "include": ["src/**/*"],
+}
+
+Instalar
+npm install -D nodemon
 npm install -D rimraf
+
+Alternativa a nodemon
+npm install ts-node
+
+
+Crear scripts para dev, build y start en el archivo package.json (en scripts)
+
+  "dev": "nodemon",
+  "build": "rimraf ./dist && tsc",
+  "start": "npm run build && node dist/app.js"
