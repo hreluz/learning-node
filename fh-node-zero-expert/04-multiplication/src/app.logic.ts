@@ -24,5 +24,7 @@ const printAndSaveTable = (base:number, limit:number, show:boolean) => {
     }
 }
 
-const {b:base, l: limit, s: show} = yarg
-printAndSaveTable(base, limit, show)
+const {b:base, l: limit, s: showTable} = yarg
+printAndSaveTable(base, limit, showTable)
+
+//npx ts-node src/app.logic.ts  -b 20  -l 30 -show true
