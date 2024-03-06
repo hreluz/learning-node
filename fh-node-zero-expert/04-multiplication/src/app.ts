@@ -6,11 +6,10 @@ import { ServerApp } from "./presentation/server-app";
 
 (async() => {
     await main()
-    console.log('End of program')
 })();
 
 
 async function main() {
     const {b:base, l: limit, s: showTable} = yarg
-    console.log(ServerApp.run({base, limit, showTable}))
+    ServerApp.run({base, limit, showTable})
 }

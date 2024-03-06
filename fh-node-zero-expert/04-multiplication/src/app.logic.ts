@@ -13,10 +13,6 @@ const printAndSaveTable = (base:number, limit:number, show:boolean) => {
     text +=`\t\ Tabla del ${base}\n`
     text +='================================\n'
 
-    for(let i = 0; i <= limit; i++) {
-        text += `\n${base} x ${i} =  ${i*base}`
-    }
-
     saveToFile(text, base)
 
     if (show) {
