@@ -21,7 +21,8 @@ export const yarg = yargs(hideBin(process.argv))
         describe: 'SHow multiplication table'
     })
     .check((argv, options) => {
-        if (argv.b < 1) throw 'error: base must be greater than 0'
+        if (argv.b < 0) throw 'error: base must be greater than 0'
+        return true
     })
     .parseSync()
 
