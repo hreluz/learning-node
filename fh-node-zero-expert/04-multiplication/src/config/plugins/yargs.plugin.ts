@@ -6,7 +6,7 @@ export const yarg = yargs(hideBin(process.argv))
         alias: 'base',
         type: 'number',
         demandOption: true,
-        describe: 'Multiplicatio table base '
+        describe: 'Multiplication table base '
     })
     .option('l', {
         alias: 'limit',

@@ -29,3 +29,6 @@ testEnvironment: "jest-environment-node",
 "test:coverage": "jest --coverage",
 ```
 
+  
+To run tests
+    npm run test:watch

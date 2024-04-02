@@ -1,0 +1,17 @@
+INSTALL NVM
+=========================
+    https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
+
+    Add variables to profiles
+
+
+LIST NODE VERSIONS
+=========================
+
+    nvm list-remote
+
+
+INSTALL VERSION
+========================
+
+    nvm install v20.9.0
