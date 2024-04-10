@@ -16,7 +16,7 @@ export class ServerApp {
         const table = new CreateTable().execute({base, limit})
         const wasCreated = new SaveFile().execute({
             fileContent: table,
-            fileDestination: `${destination}/table-${base}`,
+            fileDestination: `${destination}`,
             fileName: name
         })
 
