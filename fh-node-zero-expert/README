@@ -32,6 +32,8 @@ Packages
 
     https://www.npmjs.com/package/winston
 
+    https://www.npmjs.com/package/cron
+
 
 Crear proyecto
     npm init
