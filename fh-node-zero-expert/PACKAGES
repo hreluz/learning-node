@@ -1,3 +1,17 @@
-npm install yargs
-npm i --save-dev @types/yargs
+Packages
+  https://www.npmjs.com/package/uuid
 
+  https://www.npmjs.com/package/get-age
+
+  https://www.npmjs.com/package/axios
+
+  https://www.npmjs.com/package/winston
+
+  https://www.npmjs.com/package/cron
+
+  https://www.npmjs.com/package/json-server
+
+  https://www.npmjs.com/package/yargs
+
+    npm install yargs
+    npm i --save-dev @types/yargs
