@@ -1,3 +1,9 @@
-export const name:string = 'Hector!';
+import { Server } from "./presentation/server";
 
-console.log(name);
+(async() => {
+    await main();
+})();
+
+function main() {
+    Server.start();
+}
