@@ -9,9 +9,10 @@ export class Server {
 
 
         CronService.createJob(
-            '*/5 * * * * *',
+            '*/10 * * * * *',
             () => {
-                const url = 'http://localhost:3000'
+                // const url = 'http://localhost:3000'
+                const url = 'http://google.com'
                 new CheckService(
                     () => console.log(`${url} is ok `),
                     (error) => console.log(error)
