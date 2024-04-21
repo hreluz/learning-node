@@ -15,3 +15,7 @@ Packages
 
     npm install yargs
     npm i --save-dev @types/yargs
+    
+  https://www.npmjs.com/package/dotenv
+
+  https://www.npmjs.com/package/env-var
