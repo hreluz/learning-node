@@ -1,7 +1,7 @@
 import { envs } from "../config/envs.plugin";
 import { CheckService } from "../domain/use-cases/checks/check-service";
 import { SendEmailLogs } from "../domain/use-cases/email/send-email-logs";
-import { FileSystemDataSource } from "../infrastructure/file-syste.datasource";
+import { FileSystemDataSource } from "../infrastructure/datasources/file-system.datasource";
 import { LogRepositoryImpl } from "../infrastructure/repositories/log-imp.repository.impl";
 import { CronService } from "./cron/cron-service";
 import { EmailService } from "./email/email.service";
@@ -30,18 +30,18 @@ export class Server {
         //     `
         // })
         
-        // CronService.createJob(
-        //     '*/10 * * * * *',
-        //     () => {
-        //         // const url = 'http://localhost:3000'
-        //         const url = 'http://google.com';
+        CronService.createJob(
+            '*/10 * * * * *',
+            () => {
+                // const url = 'http://localhost:3000'
+                const url = 'http://google.com';
 
-        //         new CheckService(
-        //             fileSystemLogRepository,
-        //             () => console.log(`${url} is ok `),
-        //             (error) => console.log(error)
-        //         ).execute(url);
-        // })
+                new CheckService(
+                    fileSystemLogRepository,
+                    () => console.log(`${url} is ok `),
+                    (error) => console.log(error)
+                ).execute(url);
+        })
 
     }
 
