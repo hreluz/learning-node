@@ -8,7 +8,7 @@ export interface LogEntityOptions {
     level: LogSeverityLevel;
     message:string;
     origin: string;
-    createdAt: Date;
+    createdAt?: Date;
 }
 
 export class LogEntity {

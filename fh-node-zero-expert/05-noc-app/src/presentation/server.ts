@@ -16,7 +16,7 @@ export class Server {
         
         console.log('Server started');
 
-        const emailService = new EmailService();
+        const emailService = new EmailService(fileSystemLogRepository);
         // emailService.sendEmail({
         //     to: envs.MAILER_TO && envs.MAILER_TO || "",
         //     subject: 'Logs system',
@@ -28,11 +28,10 @@ export class Server {
         //     `
         // })
 
-        emailService.sendEmailWithFileSystemLogs(
-            [envs.MAILER_TO && envs.MAILER_TO || ""]
-        )
-
-
+        // emailService.sendEmailWithFileSystemLogs(
+        //     [envs.MAILER_TO && envs.MAILER_TO || ""]
+        // )
+        
         // CronService.createJob(
         //     '*/10 * * * * *',
         //     () => {
