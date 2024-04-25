@@ -17,16 +17,20 @@ export class Server {
         console.log('Server started');
 
         const emailService = new EmailService();
-        emailService.sendEmail({
-            to: envs.MAILER_TO,
-            subject: 'Logs system',
-            htmlBody: `
-                <h2> System logs - NOC </h2>
-                <p>        Sint velit dolor proident voluptate esse dolor magna fugiat exercitation cillum. 
-                Laboris amet laboris nulla tempor laborum proident veniam eiusmod enim. Mollit sit aliqua consectetur anim dolore qui aliquip nulla ut nulla. 
-                Dolore consequat aute ad adipisicing esse.</p>
-            `
-        })
+        // emailService.sendEmail({
+        //     to: envs.MAILER_TO && envs.MAILER_TO || "",
+        //     subject: 'Logs system',
+        //     htmlBody: `
+        //         <h2> System logs - NOC </h2>
+        //         <p>        Sint velit dolor proident voluptate esse dolor magna fugiat exercitation cillum. 
+        //         Laboris amet laboris nulla tempor laborum proident veniam eiusmod enim. Mollit sit aliqua consectetur anim dolore qui aliquip nulla ut nulla. 
+        //         Dolore consequat aute ad adipisicing esse.</p>
+        //     `
+        // })
+
+        emailService.sendEmailWithFileSystemLogs(
+            [envs.MAILER_TO && envs.MAILER_TO || ""]
+        )
 
 
         // CronService.createJob(
