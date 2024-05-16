@@ -13,3 +13,5 @@ PROD=false
 ```
 
 3. Execute the command ```npm install ```
+
+4. Docker for MongoDB
