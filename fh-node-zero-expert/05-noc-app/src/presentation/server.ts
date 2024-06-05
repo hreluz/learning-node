@@ -1,48 +1,39 @@
 import { envs } from "../config/envs.plugin";
+import { LogSeverityLevel } from "../domain/entities/log.entity";
 import { CheckService } from "../domain/use-cases/checks/check-service";
 import { SendEmailLogs } from "../domain/use-cases/email/send-email-logs";
 import { FileSystemDataSource } from "../infrastructure/datasources/file-system.datasource";
+import { MongoLogDataSource } from "../infrastructure/datasources/mongo-log.datasource";
 import { LogRepositoryImpl } from "../infrastructure/repositories/log-imp.repository.impl";
 import { CronService } from "./cron/cron-service";
 import { EmailService } from "./email/email.service";
 
-const fileSystemLogRepository = new LogRepositoryImpl(
-    new FileSystemDataSource()
+const logRepository = new LogRepositoryImpl(
+    // new FileSystemDataSource()
+    new MongoLogDataSource()
 ) 
 const emailService = new EmailService();
 
 
 export class Server {
 
-    public static start() {
+    public static async start() {
         
         console.log('Server started');
-        // new SendEmailLogs(emailService, fileSystemLogRepository).execute([envs.MAILER_TO && envs.MAILER_TO || ""])
-
-        // emailService.sendEmail({
-        //     to: envs.MAILER_TO && envs.MAILER_TO || "",
-        //     subject: 'Logs system',
-        //     htmlBody: `
-        //         <h2> System logs - NOC </h2>
-        //         <p>        Sint velit dolor proident voluptate esse dolor magna fugiat exercitation cillum. 
-        //         Laboris amet laboris nulla tempor laborum proident veniam eiusmod enim. Mollit sit aliqua consectetur anim dolore qui aliquip nulla ut nulla. 
-        //         Dolore consequat aute ad adipisicing esse.</p>
-        //     `
-        // })
         
+        // const logs = await  logRepository.getLogs(LogSeverityLevel.high);
+        // console.log(logs)
+
         CronService.createJob(
             '*/10 * * * * *',
             () => {
-                // const url = 'http://localhost:3000'
-                const url = 'http://google.com';
+                const url = 'http://googldsf.sm';
 
                 new CheckService(
-                    fileSystemLogRepository,
+                    logRepository,
                     () => console.log(`${url} is ok `),
                     (error) => console.log(error)
                 ).execute(url);
         })
-
     }
-
 }
