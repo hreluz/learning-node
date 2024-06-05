@@ -9,8 +9,8 @@ import { CronService } from "./cron/cron-service";
 import { EmailService } from "./email/email.service";
 
 const logRepository = new LogRepositoryImpl(
-    // new FileSystemDataSource()
-    new MongoLogDataSource()
+    new FileSystemDataSource()
+    // new MongoLogDataSource()
 ) 
 const emailService = new EmailService();
 
@@ -21,19 +21,20 @@ export class Server {
         
         console.log('Server started');
         
-        // const logs = await  logRepository.getLogs(LogSeverityLevel.high);
-        // console.log(logs)
+        const logs = await  logRepository.getLogs(LogSeverityLevel.high);
+        console.log(logs)
 
-        CronService.createJob(
-            '*/10 * * * * *',
-            () => {
-                const url = 'http://googldsf.sm';
+        // CronService.createJob(
+        //     '*/10 * * * * *',
+        //     () => {
+        //         const url = 'http://google.com';
 
-                new CheckService(
-                    logRepository,
-                    () => console.log(`${url} is ok `),
-                    (error) => console.log(error)
-                ).execute(url);
-        })
+        //         new CheckService(
+        //             logRepository,
+        //             () => console.log(`${url} is ok `),
+        //             (error) => console.log(error)
+        //         ).execute(url);
+        // })
     }
+
 }
