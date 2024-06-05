@@ -1,7 +1,7 @@
 import 'dotenv/config';
 
 import { Server } from "./presentation/server";
-import { MongoDatabase } from './data/mongo';
+import { LogModel, MongoDatabase } from './data/mongo';
 import { envs } from './config/envs.plugin';
 // import { envs } from './config/envs.plugin';
 
@@ -16,6 +16,22 @@ async function main() {
         dbName: envs.MONGO_DB_NAME
     })
 
-    Server.start();
+    // Create collection = tables, document - register
+    // const newLog = await LogModel.create({
+    //     message: 'Test message from Mongo',
+    //     origin: 'App.ts',
+    //     level: 'low'
+    // })
+
+    // await newLog.save();
+
+    // console.log(newLog)
+
+    const logs = await LogModel.find();
+    console.log(logs)
+    console.log(logs[1].message)
+
+
+    // Server.start();
     // console.log(envs);
 }
