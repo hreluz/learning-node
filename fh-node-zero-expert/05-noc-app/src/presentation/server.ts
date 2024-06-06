@@ -21,10 +21,7 @@ export class Server {
 
     public static async start() {
         
-        // console.log('Server started');
-        
-        // const logs = await  logRepository.getLogs(LogSeverityLevel.high);
-        // console.log(logs)
+        console.log('Server started');
 
         CronService.createJob(
             '*/10 * * * * *',

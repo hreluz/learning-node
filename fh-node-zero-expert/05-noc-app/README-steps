@@ -1,0 +1,9 @@
+
+Mongo and Postress start
+-------------------------
+    docker compose up -d
+
+
+Migrate Prisma
+-------------------
+    npx prisma migrate dev
