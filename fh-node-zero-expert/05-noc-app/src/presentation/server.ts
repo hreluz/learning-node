@@ -1,6 +1,7 @@
 import { envs } from "../config/envs.plugin";
 import { LogSeverityLevel } from "../domain/entities/log.entity";
 import { CheckService } from "../domain/use-cases/checks/check-service";
+import { CheckServiceMultiple } from "../domain/use-cases/checks/check-service-multiple";
 import { SendEmailLogs } from "../domain/use-cases/email/send-email-logs";
 import { FileSystemDataSource } from "../infrastructure/datasources/file-system.datasource";
 import { MongoLogDataSource } from "../infrastructure/datasources/mongo-log.datasource";
@@ -16,27 +17,26 @@ const logRepository = new LogRepositoryImpl(
 ) 
 const emailService = new EmailService();
 
-
 export class Server {
 
     public static async start() {
         
-        console.log('Server started');
+        // console.log('Server started');
         
-        const logs = await  logRepository.getLogs(LogSeverityLevel.high);
-        console.log(logs)
+        // const logs = await  logRepository.getLogs(LogSeverityLevel.high);
+        // console.log(logs)
 
-        // CronService.createJob(
-        //     '*/10 * * * * *',
-        //     () => {
-        //         const url = 'http://google.com';
+        CronService.createJob(
+            '*/10 * * * * *',
+            () => {
+                const url = 'http://google.com';
 
-        //         new CheckService(
-        //             logRepository,
-        //             () => console.log(`${url} is ok `),
-        //             (error) => console.log(error)
-        //         ).execute(url);
-        // })
+                new CheckServiceMultiple(
+                        [new FileSystemDataSource(), new MongoLogDataSource(), new PostgresLogDataSource()],
+                    () => console.log(`${url} is ok `),
+                    (error) => console.log(error)
+                ).execute(url);
+        })
     }
 
 }
